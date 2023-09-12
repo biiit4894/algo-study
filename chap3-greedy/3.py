@@ -39,6 +39,7 @@ for i in range(n):
     min_value = 10001
     for a in data:
         min_value = min(min_value, a)
+        print(min_value)
     # '가장 작은 수'들 중에서 가장 큰 수 찾기
     result = max(result, min_value)
 

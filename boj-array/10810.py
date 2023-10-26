@@ -8,12 +8,11 @@ for _ in range(N):
 for _ in range(M):
     i, j, k = map(int, input().split())
     for l in range(i - 1, j):
-        list.remove(list[l])
-        list.insert(l, k)
+        list[l] = k
 
 for i in range(len(list)):
     result = result + str(list[i]) + " "
-print("result: " + result + "입니다")
+print(result)
 
 # print(list)
 # 바구니 1 2 3 4 5

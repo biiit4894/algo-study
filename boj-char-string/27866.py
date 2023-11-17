@@ -1,4 +1,5 @@
 S = input()
 i = int(input())
 
-print(list(S)[i-1])
+# print(list(S)[i-1])
+print(S[i-1])

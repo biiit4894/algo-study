@@ -1,4 +1,4 @@
-class Solution {
+class CommonMultiple {
     public int solution(int number, int n, int m) {
         int answer = 0;
         

@@ -1,4 +1,3 @@
-
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -18,15 +17,18 @@ public class Main {
         }
 
         HashSet<Integer> set = new HashSet<>();
+        StringBuilder builder = new StringBuilder();
         for(int i = 0; i < N; i++) {
             set.add(arr1[i]);
         }
         for(int i = 0; i < M; i++) {
             if(set.contains(arr2[i])) {
-                System.out.print("1 ");
+                builder.append("1 ");
             } else {
-                System.out.print("0 ");
+                builder.append("0 ");
             }
         }
+
+        System.out.println(builder.toString());
     }
 }

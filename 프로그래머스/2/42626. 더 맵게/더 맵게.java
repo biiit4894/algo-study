@@ -11,7 +11,7 @@ class Solution {
         }
         
         while(minHeap.peek() < K) {
-            if(minHeap.size() == 1) {
+            if(minHeap.size() <= 1) {
                 return -1;
             } else {
                 int first = minHeap.poll();

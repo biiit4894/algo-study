@@ -17,6 +17,7 @@ public class ClassPresident {
 		for (String key : map.keySet()) {
 			if (max_count < map.get(key)) {
 				max_count = map.get(key);
+				answer = key;
 			}
 		}
 		Iterator<Map.Entry<String, Integer>> entries = map.entrySet().iterator();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
+// 나의 풀이
 public class ReversedPrimeNumber {
 	public boolean isPrime(int n) {
 		if(n == 1) {

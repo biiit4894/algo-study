@@ -1,30 +1,18 @@
-import java.util.Map;
-import java.util.Iterator;
-import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Scanner;
 
-// 나의 풀이
+public class Main {
 
-public class ClassPresident {
-	public String solution(int n, String str) {
-		String answer = "";
-		HashMap<String, Integer> map = new HashMap<>();
-		for (int i = 0; i < n; i++) {
-			String key = str.substring(i, i + 1);
-			map.put(key, map.getOrDefault(key, 0) + 1);
-		}
-		int max_count = Integer.MIN_VALUE;
-		for (String key : map.keySet()) {
-			if (max_count < map.get(key)) {
-				max_count = map.get(key);
-				answer = key;
-			}
-		}
-		Iterator<Map.Entry<String, Integer>> entries = map.entrySet().iterator();
-		while (entries.hasNext()) {
-			Map.Entry<String, Integer> entry = entries.next();
-			if(entry.getValue() == max_count) {
-				answer = entry.getKey();
+	public char solution(int n, String str) {
+		char answer = 0;
+		int max = Integer.MIN_VALUE;
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		char[] arr = str.toCharArray();
+		for(int i = 0; i < n; i++) {
+			map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+			if (map.get(arr[i]) > max) {
+				max = map.get(arr[i]);
+				answer = arr[i];
 			}
 		}
 
@@ -32,9 +20,8 @@ public class ClassPresident {
 	}
 
 	public static void main(String[] args) {
+		Main T = new Main();
 		Scanner kb = new Scanner(System.in);
-		ClassPresident T = new ClassPresident();
-
 		int n = kb.nextInt();
 		String str = kb.next();
 		System.out.println(T.solution(n, str));

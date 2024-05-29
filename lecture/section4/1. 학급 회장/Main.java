@@ -1,28 +1,36 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
-// charArray, HashMap 사용 풀이
-class Main {
-	public char solution(int n, String str) {
-		char answer = '';
+public class Main {
+
+	public char solution(int n, String s) {
+		char answer = ' ';
 		HashMap<Character, Integer> map = new HashMap<>();
-		for (char key : str.toCharArray()) {
-			map.put(key, map.getOrDefault(key, 0) + 1);
+		for(char x : s.toCharArray()) {
+			map.put(x, map.getOrDefault(x, 0) + 1);
 		}
+		//System.out.println(map.containsKey('F'));
+
+		// System.out.println(map.size()); // 5
+		// System.out.println(map.remove('A')); // 3 (key의 value 리턴)
+		// System.out.println(map.size()); // 4
+
 		int max = Integer.MIN_VALUE;
 		for (char key : map.keySet()) {
-			if(max < map.get(key)) {
+			//System.out.println(key+" "+map.get(key));
+			if(map.get(key) > max) {
 				max = map.get(key);
 				answer = key;
 			}
 		}
 		return answer;
 	}
-	public static void main(String[] args ) {
-		Scanner kb = new Scanner(System.in);
+
+	public static void main(String[] args) {
 		Main T = new Main();
+		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		String str = kb.next();
-		System.out.print(T.solution(n, str));
-
+		System.out.println(T.solution(n, str));
 	}
 }

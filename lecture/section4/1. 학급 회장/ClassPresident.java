@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class ClassPresident {
 
 	public char solution(int n, String str) {
 		char answer = 0;
@@ -20,7 +20,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		Main T = new Main();
+		ClassPresident T = new ClassPresident();
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		String str = kb.next();

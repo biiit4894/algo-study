@@ -4,9 +4,7 @@ import java.util.Collections;
 class Solution {
     public long solution(long n) {
         String str = Long.toString(n);
-        
         Character[] arr = new Character[str.length()];
-        
         for(int i = 0; i < str.length(); i++) {
             arr[i] = str.charAt(i);
         }
@@ -15,8 +13,8 @@ class Solution {
         
         StringBuilder sortedStr = new StringBuilder(arr.length);
         
-        for(char c : arr) {
-            sortedStr.append(c);
+        for(char x : arr) {
+            sortedStr.append(x);
         }
         
         return Long.parseLong(sortedStr.toString());

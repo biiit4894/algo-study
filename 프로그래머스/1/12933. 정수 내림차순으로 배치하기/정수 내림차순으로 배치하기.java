@@ -1,31 +1,24 @@
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
 
 class Solution {
     public long solution(long n) {
-        long answer = 0;
-        String a = "" + n;
+        String str = Long.toString(n);
         
-        int[] arr = new int[a.length()];
+        Character[] arr = new Character[str.length()];
         
-        int count = 0;
-        while(n > 0) {
-            arr[count++] = (int) (n % 10);
-            n /= 10;
+        for(int i = 0; i < str.length(); i++) {
+            arr[i] = str.charAt(i);
         }
         
-        for(int i = 0; i < arr.length - 1; i++) {
-            for(int j = i + 1; j < arr.length; j++) {
-                if(arr[i] > arr[j]) {
-                    int tmp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = tmp;
-                }
-            }
+        Arrays.sort(arr, Collections.reverseOrder());
+        
+        StringBuilder sortedStr = new StringBuilder(arr.length);
+        
+        for(char c : arr) {
+            sortedStr.append(c);
         }
         
-        for(int i = 0; i < arr.length; i++) {
-            answer += arr[i] * Math.pow(10, i);
-        }
-        return answer;
+        return Long.parseLong(sortedStr.toString());
     }
 }

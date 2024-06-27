@@ -1,8 +1,4 @@
-import java.util.Scanner;
-
 public class Main2 {
-
-    // StackOverflow error
     public void DFS(int n) {
         if(n == 0) {
             return; // void형 메소드에서 함수를 종료시켜버리는 방법

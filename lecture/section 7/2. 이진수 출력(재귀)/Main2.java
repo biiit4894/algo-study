@@ -1,15 +1,15 @@
-public class Main3 {
+public class Main2 {
     public void DFS(int n) {
         if(n == 0) {
             return;
         } else {
-            DFS(n - 1);
-            System.out.print(n + " "); // 3 입력 -> 1 2 3
+            System.out.print(n % 2 + " "); // 1 1 0 1
+            DFS(n /2);
         }
     }
 
     public static void main(String[] args) {
-        Main3 T = new Main3();
-        T.DFS(3);
+        Main2 T = new Main2();
+        T.DFS(11);
     }
 }

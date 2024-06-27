@@ -3,13 +3,13 @@ public class Main3 {
         if(n == 0) {
             return;
         } else {
-            DFS(n - 1);
-            System.out.print(n + " "); // 3 입력 -> 1 2 3
+            DFS(n /2);
+            System.out.print(n % 2 + " ");
         }
     }
 
     public static void main(String[] args) {
         Main3 T = new Main3();
-        T.DFS(3);
+        T.DFS(11);
     }
 }

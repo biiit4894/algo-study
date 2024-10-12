@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-
+// 정답
 class Time implements Comparable<Time> {
     public int time;
     public char state; // 's', 'e'

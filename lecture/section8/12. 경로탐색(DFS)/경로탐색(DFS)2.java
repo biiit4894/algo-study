@@ -9,6 +9,7 @@ public class Main {
             answer++;
         } else {
             for (int i = 1; i <= n; i++) {
+                // v번 정점에서 갈 수 있는 i번 정점을 모두 찾는다
                 if(ch[i] == 0 && graph[v][i] == 1) {
                     ch[i] = 1;
                     DFS(i);

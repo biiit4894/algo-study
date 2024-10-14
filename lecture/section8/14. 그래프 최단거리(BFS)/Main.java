@@ -5,21 +5,21 @@ import java.util.Scanner;
 
 public class Main {
     static int n, m;
-    static ArrayList<ArrayList<Integer>> graph;
-    static int[] ch, dis;
+    static ArrayList<ArrayList<Integer>> graph; // 인접리스트
+    static int[] ch, dis; // 정점 방문 여부 저장, 정점마다의 최소 거리 저장
 
     public void BFS(int v) {
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>(); // 현재 위치한 정점을 저장
         ch[v] = 1;
         dis[v] = 0;
         queue.offer(v);
         while (!queue.isEmpty()) {
-            int cur = queue.poll();
-            for (int j : graph.get(cur)) {
-                if (ch[j] == 0) {
-                    ch[j] = 1;
-                    queue.offer(j);
-                    dis[j] = dis[cur] + 1;
+            int cv = queue.poll(); // current vertex
+            for(int nv : graph.get(cv)) { // next vertex의 후보군 중에서
+                if(ch[nv] == 0) { // next vertex를 방문한 적이 없다면
+                    ch[nv] = 1; // 방문하고
+                    queue.offer(nv); // 큐에 저장
+                    dis[nv] = dis[cv] + 1; // cv -> nv의 최단거리는 cv까지의 최단 거리 + 1
                 }
             }
         }
@@ -41,8 +41,8 @@ public class Main {
             graph.get(a).add(b);
         }
         T.BFS(1);
-        for (int i = 1; i <= n; i++) {
-            System.out.println(i+1+" : " +dis[i]);
+        for (int i = 2; i <= n; i++) {
+            System.out.println(i +" : " +dis[i]);
         }
     }
 }
